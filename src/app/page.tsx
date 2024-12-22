@@ -1,8 +1,10 @@
-// Development
+// Material Ui
+import { Box, Typography } from '@mui/material'
+
 export default function Home() {
   return (
-    <main>
-      <span>Hello</span>
-    </main>
+    <Box component="main">
+      <Typography component="h1">Name</Typography>
+    </Box>
   )
 }
