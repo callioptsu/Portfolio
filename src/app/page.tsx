@@ -1,4 +1,4 @@
-// Production
+// Production.
 export default function Home() {
   return (
     <main>
