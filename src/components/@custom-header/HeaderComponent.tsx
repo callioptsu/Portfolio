@@ -3,21 +3,25 @@ import { AppBar, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 
 // Custom
-import TypographyComponent from '../@custom-typography/TypographyComponent'
+import LinkComponent from '../@custom-links/LinkComponent'
 
-export default function ComponentHeader() {
+export default function HeaderComponent() {
   return (
     <AppBar position="static">
       <Container>
-        <Toolbar>
+        <Toolbar
+          sx={{
+            display: 'flex',
+          }}
+        >
           <IconButton>
             <MenuIcon sx={{ color: 'white' }} />
           </IconButton>
           {['Projetos', 'Sobre-mim', 'Contatos'].map((values, idx) => {
             return (
-              <TypographyComponent
+              <LinkComponent
+                url={values.toLowerCase()}
                 key={idx}
-                component="a"
                 fontFamily="Poppins"
                 text={values}
               />
