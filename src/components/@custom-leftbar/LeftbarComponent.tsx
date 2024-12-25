@@ -30,14 +30,14 @@ export default function LeftbarComponent({
     <Drawer anchor="left" open={isOpen} onClose={() => setIsOpen(false)}>
       <List>
         {['sobre-mim', 'projetos', 'contatos'].map(
-          (values: string, idx: number) => {
+          (value: string, idx: number) => {
             return (
               <ListItem key={idx}>
-                {renderIcons(values)}
+                {renderIcons(value)}
                 <LinkComponent
-                  url={values}
+                  url={value}
                   fontFamily="Poppins"
-                  text={values.slice(0, 1).toUpperCase() + values.slice(1)}
+                  text={value.slice(0, 1).toUpperCase() + value.slice(1)}
                 />
               </ListItem>
             )
