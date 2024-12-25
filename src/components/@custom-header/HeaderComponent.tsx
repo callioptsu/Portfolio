@@ -1,11 +1,16 @@
+'use client'
+
 // Material Ui
 import { AppBar, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 
-// Custom
-import LinkComponent from '../@custom-links/LinkComponent'
+interface HeaderComponentProps {
+  handleDrawerToggle: () => void
+}
 
-export default function HeaderComponent() {
+export default function HeaderComponent({
+  handleDrawerToggle,
+}: HeaderComponentProps) {
   return (
     <AppBar position="static">
       <Container>
@@ -14,19 +19,9 @@ export default function HeaderComponent() {
             display: 'flex',
           }}
         >
-          <IconButton>
+          <IconButton onClick={handleDrawerToggle}>
             <MenuIcon sx={{ color: 'white' }} />
           </IconButton>
-          {['Projetos', 'Sobre-mim', 'Contatos'].map((values, idx) => {
-            return (
-              <LinkComponent
-                url={values.toLowerCase()}
-                key={idx}
-                fontFamily="Poppins"
-                text={values}
-              />
-            )
-          })}
         </Toolbar>
       </Container>
     </AppBar>

@@ -1,7 +1,7 @@
 // Material Ui
 import { Link } from '@mui/material'
 
-interface ILinkComponent {
+interface LinkComponentProps {
   url: string
   fontFamily: string
   text: string
@@ -11,17 +11,15 @@ export default function LinkComponent({
   url,
   fontFamily,
   text,
-}: ILinkComponent) {
+}: LinkComponentProps) {
   return (
     <Link
       href={url}
       fontFamily={fontFamily}
       sx={{
-        color: 'white',
+        color: 'blue',
         margin: '10px',
-        ':hover': {
-          textDecoration: 'none',
-        },
+        textDecoration: 'none',
       }}
     >
       {text}
