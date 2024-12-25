@@ -1,18 +1,21 @@
 'use client'
+import { useState } from 'react'
 
 // Material Ui
 import { AppBar, Container, IconButton, Toolbar } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import LeftbarComponent from '../@custom-leftbar/LeftbarComponent'
 
-interface HeaderComponentProps {
-  handleDrawerToggle: () => void
-}
+export default function HeaderComponent() {
+  const [isOpen, setIsOpen] = useState<boolean>(false)
 
-export default function HeaderComponent({
-  handleDrawerToggle,
-}: HeaderComponentProps) {
+  const handleDrawerToggle = () => {
+    setIsOpen((prev) => !prev)
+  }
+
   return (
     <AppBar position="static">
+      <LeftbarComponent isOpen={isOpen} setIsOpen={setIsOpen} />
       <Container>
         <Toolbar
           sx={{
