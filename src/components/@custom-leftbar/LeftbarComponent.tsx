@@ -2,6 +2,7 @@ import React, { Dispatch } from 'react'
 
 // Material UI
 import { Drawer, List, ListItem } from '@mui/material'
+import { Contacts, Folder, Person } from '@mui/icons-material'
 
 // Custom
 import LinkComponent from '../@custom-links/LinkComponent'
@@ -15,20 +16,33 @@ export default function LeftbarComponent({
   isOpen,
   setIsOpen,
 }: LeftbarComponentProps) {
+  const renderIcons = (value: string) => {
+    if (value === 'sobre-mim') {
+      return <Person sx={{ color: 'purple' }} />
+    } else if (value === 'projetos') {
+      return <Folder sx={{ color: 'purple' }} />
+    } else if (value === 'contatos') {
+      return <Contacts sx={{ color: 'purple' }} />
+    }
+  }
+
   return (
     <Drawer anchor="left" open={isOpen} onClose={() => setIsOpen(false)}>
       <List>
-        {['Projetos', 'Sobre-mim', 'Contatos'].map((values, idx) => {
-          return (
-            <ListItem key={idx}>
-              <LinkComponent
-                url={values.toLowerCase()}
-                fontFamily="Poppins"
-                text={values}
-              />
-            </ListItem>
-          )
-        })}
+        {['sobre-mim', 'projetos', 'contatos'].map(
+          (values: string, idx: number) => {
+            return (
+              <ListItem key={idx}>
+                {renderIcons(values)}
+                <LinkComponent
+                  url={values}
+                  fontFamily="Poppins"
+                  text={values.slice(0, 1).toUpperCase() + values.slice(1)}
+                />
+              </ListItem>
+            )
+          },
+        )}
       </List>
     </Drawer>
   )
