@@ -25,12 +25,25 @@ export default function Home() {
     const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1)
 
     return (
-      <List key={value}>
+      <List
+        key={value}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          margin: '6px',
+          padding: '4px 8px 4px 8px',
+          borderRadius: '20px',
+          border: '1px solid black',
+        }}
+      >
         {stackIcons[value]}
         <TypographyComponent
-          component="h3"
+          component="span"
           fontFamily="Poppins"
           text={capitalizedValue}
+          fontSize="2vh"
+          fontWeight="500"
         />
       </List>
     )
@@ -39,20 +52,42 @@ export default function Home() {
   return (
     <>
       <HeaderComponent />
-      <Box component="main">
-        <Box component="section">
+      <Box
+        component="main"
+        sx={{
+          border: '2px solid red',
+        }}
+      >
+        <Box
+          component="section"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           <TypographyComponent
             component="h1"
             fontFamily="Poppins"
             text="ANTONIO SANTANA"
+            fontSize="6vh"
+            fontWeight="bold"
           />
           <TypographyComponent
             component="h2"
             fontFamily="Poppins"
             text="SOFTWARE DEVELOPER"
+            fontSize="5vh"
+            fontWeight="bold"
           />
         </Box>
-        <Box component="section">
+        <Box
+          component="section"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
           {['react', 'next.js', 'typescript', 'devops', 'java'].map((value) => {
             return renderStacks(value)
           })}
