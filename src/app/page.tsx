@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Material UI
-import { Box, List } from '@mui/material'
+import { Box, List, Typography } from '@mui/material'
 
 // React Icons
 import { FaReact, FaDocker, FaJava } from 'react-icons/fa'
@@ -10,7 +10,7 @@ import { RiNextjsFill } from 'react-icons/ri'
 import { SiTypescript } from 'react-icons/si'
 
 // Components
-import { HeaderComponent, TypographyComponent } from '@/components'
+import { HeaderComponent } from '@/components'
 
 export default function Home() {
   const stackIcons: { [key: string]: React.JSX.Element } = {
@@ -38,13 +38,14 @@ export default function Home() {
         }}
       >
         {stackIcons[value]}
-        <TypographyComponent
-          component="span"
+        <Typography
+          sx={{ margin: '5px' }}
+          variant="subtitle2"
           fontFamily="Poppins"
-          text={capitalizedValue}
-          fontSize="2vh"
           fontWeight="500"
-        />
+        >
+          {capitalizedValue}
+        </Typography>
       </List>
     )
   }
@@ -66,20 +67,12 @@ export default function Home() {
             alignItems: 'center',
           }}
         >
-          <TypographyComponent
-            component="h1"
-            fontFamily="Poppins"
-            text="ANTONIO SANTANA"
-            fontSize="6vh"
-            fontWeight="bold"
-          />
-          <TypographyComponent
-            component="h2"
-            fontFamily="Poppins"
-            text="SOFTWARE DEVELOPER"
-            fontSize="5vh"
-            fontWeight="bold"
-          />
+          <Typography variant="h3" fontFamily="Poppins" fontWeight="bold">
+            ANTONIO SANTANA
+          </Typography>
+          <Typography variant="h4" fontFamily="Poppins" fontWeight="bold">
+            SOFTWARE DEVELOPER
+          </Typography>
         </Box>
         <Box
           component="section"
