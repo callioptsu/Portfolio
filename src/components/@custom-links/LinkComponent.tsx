@@ -20,6 +20,9 @@ export default function LinkComponent({
         color: 'blue',
         margin: '10px',
         textDecoration: 'none',
+        ':hover': {
+          cursor: 'pointer',
+        },
       }}
     >
       {text}

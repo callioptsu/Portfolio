@@ -17,7 +17,7 @@ export default function LeftbarComponent({
   setIsOpen,
 }: LeftbarComponentProps) {
   const renderIcons = (value: string) => {
-    if (value === 'sobre-mim') {
+    if (value === 'sobre mim') {
       return <Person sx={{ color: 'purple' }} />
     } else if (value === 'projetos') {
       return <Folder sx={{ color: 'purple' }} />
@@ -29,7 +29,7 @@ export default function LeftbarComponent({
   return (
     <Drawer anchor="left" open={isOpen} onClose={() => setIsOpen(false)}>
       <List>
-        {['sobre-mim', 'projetos', 'contatos'].map(
+        {['sobre mim', 'projetos', 'contatos'].map(
           (value: string, idx: number) => {
             return (
               <ListItem key={idx}>

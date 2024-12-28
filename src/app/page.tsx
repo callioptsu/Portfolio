@@ -12,6 +12,9 @@ import { SiTypescript } from 'react-icons/si'
 // Components
 import { HeaderComponent } from '@/components'
 
+// Style
+import './page.css'
+
 export default function Home() {
   const stackIcons: { [key: string]: React.JSX.Element } = {
     react: <FaReact />,
@@ -21,7 +24,7 @@ export default function Home() {
     java: <FaJava />,
   }
 
-  const renderStacks = (value: string) => {
+  const renderStacks = (value: string, idx: number) => {
     const capitalizedValue = value.charAt(0).toUpperCase() + value.slice(1)
 
     return (
@@ -35,11 +38,15 @@ export default function Home() {
           padding: '4px 8px 4px 8px',
           borderRadius: '20px',
           border: '1px solid black',
+          opacity: '0',
+          animation: `fadeIn 1s ease-in-out ${idx * 0.5}s forwards`,
         }}
       >
         {stackIcons[value]}
         <Typography
-          sx={{ margin: '5px' }}
+          sx={{
+            margin: '4px',
+          }}
           variant="subtitle2"
           fontFamily="Poppins"
           fontWeight="500"
@@ -56,7 +63,10 @@ export default function Home() {
       <Box
         component="main"
         sx={{
-          border: '2px solid red',
+          display: 'flex',
+          flexDirection: 'column',
+          height: 'calc(100vh - 64px)',
+          justifyContent: 'center',
         }}
       >
         <Box
@@ -67,10 +77,34 @@ export default function Home() {
             alignItems: 'center',
           }}
         >
-          <Typography variant="h3" fontFamily="Poppins" fontWeight="bold">
+          <Typography
+            variant="h3"
+            fontFamily="Poppins"
+            fontWeight="bold"
+            sx={{
+              backgroundImage:
+                'linear-gradient(to right, rgb(0, 0, 0), #4B0082)',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              opacity: '0',
+              animation: 'fadeIn 1s ease-out forwards',
+            }}
+          >
             ANTONIO SANTANA
           </Typography>
-          <Typography variant="h4" fontFamily="Poppins" fontWeight="bold">
+          <Typography
+            variant="h4"
+            fontFamily="Poppins"
+            fontWeight="bold"
+            sx={{
+              backgroundImage:
+                'linear-gradient(to right, rgb(0, 0, 0), #4B0082)',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              opacity: '0',
+              animation: 'fadeIn 1s ease-out forwards',
+            }}
+          >
             SOFTWARE DEVELOPER
           </Typography>
         </Box>
@@ -81,9 +115,11 @@ export default function Home() {
             justifyContent: 'center',
           }}
         >
-          {['react', 'next.js', 'typescript', 'devops', 'java'].map((value) => {
-            return renderStacks(value)
-          })}
+          {['react', 'next.js', 'typescript', 'devops', 'java'].map(
+            (value, idx) => {
+              return renderStacks(value, idx)
+            },
+          )}
         </Box>
       </Box>
     </>
