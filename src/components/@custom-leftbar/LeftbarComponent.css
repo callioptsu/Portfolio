@@ -1,0 +1,18 @@
+@keyframes scalingIn {
+  0% {
+    background-color: rgb(255, 255, 255, 0);
+  }
+
+  100% {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes scalingOut {
+  0% {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+  100% {
+    background-color: rgb(255, 255, 255, 0);
+  }
+}

@@ -17,12 +17,10 @@ export default function LinkComponent({
       href={url}
       fontFamily={fontFamily}
       sx={{
-        color: 'blue',
+        color: 'white',
         margin: '10px',
         textDecoration: 'none',
-        ':hover': {
-          cursor: 'pointer',
-        },
+        cursor: 'default',
       }}
     >
       {text}

@@ -14,7 +14,12 @@ export default function HeaderComponent() {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: 'rgb(27, 18, 18)',
+      }}
+    >
       <LeftbarComponent isOpen={isOpen} setIsOpen={setIsOpen} />
       <Container>
         <Toolbar

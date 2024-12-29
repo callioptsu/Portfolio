@@ -37,9 +37,10 @@ export default function Home() {
           margin: '6px',
           padding: '4px 8px 4px 8px',
           borderRadius: '20px',
-          border: '1px solid black',
+          border: '1px solid rgb(40, 40, 43)',
           opacity: '0',
           animation: `fadeIn 1s ease-in-out ${idx * 0.5}s forwards`,
+          color: 'rgb(40, 40, 43)',
         }}
       >
         {stackIcons[value]}
@@ -82,12 +83,12 @@ export default function Home() {
             fontFamily="Poppins"
             fontWeight="bold"
             sx={{
-              backgroundImage:
-                'linear-gradient(to right, rgb(0, 0, 0), #4B0082)',
-              WebkitBackgroundClip: 'text',
-              color: 'transparent',
               opacity: '0',
               animation: 'fadeIn 1s ease-out forwards',
+              textShadow: `
+                2px 0 0 rgb(40, 40, 43, 0.4)
+              `,
+              color: 'rgb(40, 40, 43)',
             }}
           >
             ANTONIO SANTANA
@@ -97,15 +98,15 @@ export default function Home() {
             fontFamily="Poppins"
             fontWeight="bold"
             sx={{
-              backgroundImage:
-                'linear-gradient(to right, rgb(0, 0, 0), #4B0082)',
-              WebkitBackgroundClip: 'text',
-              color: 'transparent',
               opacity: '0',
               animation: 'fadeIn 1s ease-out forwards',
+              textShadow: ` 
+                2px 0 0 rgb(40, 40, 43, 0.4)
+              `,
+              color: 'rgb(40, 40, 43)',
             }}
           >
-            SOFTWARE DEVELOPER
+            SOFTWARE DEVELOPER {'</>'}
           </Typography>
         </Box>
         <Box
