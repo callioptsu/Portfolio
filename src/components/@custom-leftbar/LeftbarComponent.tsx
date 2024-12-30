@@ -1,15 +1,12 @@
 import React, { Dispatch } from 'react'
 
 // Material UI
-import { Divider, Drawer, List, ListItem } from '@mui/material'
+import { Divider, Drawer, Link, List, ListItem } from '@mui/material'
 
 // React Icons
 import { SiGmail } from 'react-icons/si'
 import { FaFolderTree } from 'react-icons/fa6'
 import { BsPersonWorkspace } from 'react-icons/bs'
-
-// Custom
-import LinkComponent from '../@custom-links/LinkComponent'
 
 // Style
 import './LeftbarComponent.css'
@@ -25,11 +22,11 @@ export default function LeftbarComponent({
 }: LeftbarComponentProps) {
   const renderIcons = (value: string) => {
     if (value === 'sobre mim') {
-      return <BsPersonWorkspace color="white" />
+      return <BsPersonWorkspace color="white" style={{ marginRight: '10px' }} />
     } else if (value === 'projetos') {
-      return <FaFolderTree color="white" />
+      return <FaFolderTree color="white" style={{ marginRight: '10px' }} />
     } else if (value === 'contatos') {
-      return <SiGmail color="white" />
+      return <SiGmail color="white" style={{ marginRight: '10px' }} />
     }
   }
 
@@ -61,12 +58,21 @@ export default function LeftbarComponent({
                   },
                 }}
               >
-                {renderIcons(value)}
-                <LinkComponent
-                  url={value.replace(' ', '-')}
+                <Link
+                  href={value.replace(' ', '-')}
                   fontFamily="Poppins"
-                  text={value.slice(0, 1).toUpperCase() + value.slice(1)}
-                />
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    color: 'white',
+                    margin: '10px',
+                    textDecoration: 'none',
+                    cursor: 'default',
+                  }}
+                >
+                  {renderIcons(value)}
+                  {value.slice(0, 1).toUpperCase() + value.slice(1)}
+                </Link>
               </ListItem>
             )
           },
