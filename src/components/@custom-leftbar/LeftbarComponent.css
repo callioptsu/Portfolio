@@ -1,4 +1,4 @@
-@keyframes scalingIn {
+@keyframes hoverIn {
   0% {
     background-color: rgb(255, 255, 255, 0);
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes scalingOut {
+@keyframes hoverOut {
   0% {
     background-color: rgb(255, 255, 255, 0.2);
   }

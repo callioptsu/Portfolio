@@ -51,10 +51,10 @@ export default function LeftbarComponent({
                   marginBottom: '10px',
                   marginTop: '10px',
                   ':hover': {
-                    animation: 'scalingIn 0.2s ease-in forwards',
+                    animation: 'hoverIn 0.2s ease-in forwards',
                   },
                   ':not(:hover)': {
-                    animation: 'scalingOut 0.2s forwards',
+                    animation: 'hoverOut 0.2s forwards',
                   },
                 }}
               >
