@@ -25,11 +25,12 @@ export default function AboutMe() {
           <Image
             src="/img/photo.jpg"
             alt="antonio santana"
-            width={150}
-            height={150}
+            width={200}
+            height={200}
             style={{
               borderRadius: '100%',
               border: '2px solid rgb(0, 0, 0, 0.5)',
+              margin: '20px',
             }}
             priority
           />
@@ -44,16 +45,41 @@ export default function AboutMe() {
               alignItems: 'center',
               textDecoration: 'none',
               cursor: 'pointer',
-              border: '2px solid red',
+              padding: '10px',
+              borderRadius: '50px',
+              color: 'rgb(40, 40, 43)',
+              backgroundColor: 'rgb(27, 18, 18, 0.2)',
+              fontWeight: 'bold',
+              marginBottom: '20px',
+              border: '1px solid rgb(40, 40, 43)',
+              transition: 'background-color 0.2s ease-in',
+              '&:hover': {
+                backgroundColor: 'rgb(27, 18, 18, 0.25)',
+              },
             }}
             download
           >
-            <IoMdDownload />
+            <IoMdDownload style={{ margin: '5px' }} />
             BAIXAR CV
           </Link>
         </Box>
-        <Box component="section">
-          <Typography fontFamily="Poppins" variant="subtitle2">
+        <Box
+          component="section"
+          sx={{
+            width: '60%',
+          }}
+        >
+          <Typography
+            fontFamily="Montserrat"
+            variant="subtitle1"
+            sx={{
+              fontWeight: 'bold',
+              textAlign: 'justify',
+              color: 'rgb(40, 40, 43)',
+              padding: '10px',
+              borderRadius: '5px',
+            }}
+          >
             Desde os 16 anos apaixonado por tecnologia. Ao longo dos anos me
             dediquei a expandir meus conhecimentos em busca de novas
             oportunidades que me permitissem crescer profissionalmente. Tenho
