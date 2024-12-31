@@ -60,6 +60,7 @@ export default function Home() {
 
   return (
     <>
+      <Box sx={{ height: '8vh' }} />
       <HeaderComponent />
       <Box
         component="main"

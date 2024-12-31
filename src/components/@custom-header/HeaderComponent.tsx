@@ -15,7 +15,7 @@ export default function HeaderComponent() {
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{
         backgroundColor: 'rgb(27, 18, 18)',
       }}
