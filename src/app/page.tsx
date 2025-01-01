@@ -60,7 +60,7 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ height: '8vh' }} />
+      <Box sx={{ height: '7.5vh' }} />
       <HeaderComponent />
       <Box
         component="main"
@@ -107,7 +107,7 @@ export default function Home() {
               color: 'rgb(40, 40, 43)',
             }}
           >
-            SOFTWARE DEVELOPER {'</>'}
+            SOFTWARE ENGINEER {'</>'}
           </Typography>
         </Box>
         <Box

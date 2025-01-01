@@ -1,26 +1,37 @@
+'use client'
+
 import Image from 'next/image'
 
 // Material UI
-import { Box, Divider, Link, Typography } from '@mui/material'
-import {
-  Timeline,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-  TimelineItem,
-  TimelineSeparator,
-} from '@mui/lab'
+import { Box, keyframes, Link, Typography } from '@mui/material'
 
 // React Icons
 import { IoMdDownload } from 'react-icons/io'
 
 // Custom
-import { HeaderComponent } from '@/components'
+import { HeaderComponent, TimelineComponent } from '@/components'
+
+// Data
+import { data } from './data'
+
+const animationDown = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`
 
 export default function AboutMe() {
+  const { courses } = data
+
   return (
     <>
-      <Box sx={{ height: '8vh' }} />
+      <Box sx={{ height: '7.5vh' }} />
       <HeaderComponent />
       <Box
         component="main"
@@ -30,21 +41,35 @@ export default function AboutMe() {
           alignItems: 'center',
         }}
       >
-        <Box component="section">
+        <Box
+          component="section"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
           <Image
             src="/img/photo.jpg"
             alt="antonio santana"
             width={200}
             height={200}
             style={{
-              borderRadius: '100%',
-              border: '2px solid rgb(0, 0, 0, 0.5)',
+              borderRadius: '50%',
+              border: '1px solid rgb(0, 0, 0, 0.5)',
               margin: '8vh',
             }}
             priority
           />
         </Box>
-        <Box component="section">
+        <Box
+          component="section"
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
           <Link
             href="/antonio-santana-cv.pdf"
             target="_blank"
@@ -57,10 +82,8 @@ export default function AboutMe() {
               padding: '10px',
               borderRadius: '50px',
               color: 'rgb(40, 40, 43)',
-              backgroundColor: 'rgb(27, 18, 18, 0.2)',
               fontWeight: 'bold',
               marginBottom: '20px',
-              border: '1px solid rgb(40, 40, 43)',
               transition: 'background-color 0.2s ease-in',
               '&:hover': {
                 backgroundColor: 'rgb(27, 18, 18, 0.25)',
@@ -75,18 +98,39 @@ export default function AboutMe() {
         <Box
           component="section"
           sx={{
-            width: '60%',
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            marginTop: '2.5vh',
+            backgroundColor: 'rgb(27, 18, 18)',
           }}
         >
+          <Box
+            sx={{
+              position: 'fixed',
+              animation: `${animationDown} 1s ease-in-out infinite`,
+              fontSize: '30px',
+              transform: 'rotate(90deg)',
+              backgroundColor: 'rgb(100, 149, 237, 0.4)',
+              color: 'rgb(27, 18, 18)',
+              bottom: '10%',
+              border: '2px solid rgb(27, 18, 18)',
+              borderRadius: '50px',
+              zIndex: '1',
+            }}
+          >
+            &#8595;
+          </Box>
           <Typography
             fontFamily="Montserrat"
             variant="subtitle1"
             sx={{
-              fontWeight: 'bold',
-              textAlign: 'justify',
-              color: 'rgb(40, 40, 43)',
-              padding: '10px',
+              fontWeight: '600',
+              textAlign: 'center',
+              padding: '25px',
               borderRadius: '5px',
+              width: '60%',
+              color: 'rgb(237,229, 222)',
             }}
           >
             Desde os 16 anos apaixonado por tecnologia. Ao longo dos anos me
@@ -107,172 +151,64 @@ export default function AboutMe() {
             margin: '10vh 0 10vh 0',
           }}
         >
-          <Box component="section" sx={{ width: '30%' }}>
-            <Timeline position="right">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="primary" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.wyden.com.br/unidades/unifacid"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">
-                      Faculdade UniFacid Wyden
-                    </Typography>
-                  </Link>
-                  <Typography variant="caption">2024 (3° Período)</Typography>
-                  <Link href="" target="_blank" rel="noreferrer">
-                    <Typography variant="caption">
-                      Análise e Desenvolvimento de Sistemas
-                    </Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
-            <Timeline position="left">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="primary" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.cre8language.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">Cre8 Language</Typography>
-                  </Link>
-                  <Typography variant="caption">2024 (Em andamento)</Typography>
-                  <Link href="" target="_blank" rel="noreferrer">
-                    <Typography variant="caption">Inglês A2</Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
-            <Timeline position="right">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="success" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.betrybe.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">Trybe</Typography>
-                  </Link>
-                  <Typography variant="caption">2023 (115 horas)</Typography>
-                  <Link
-                    href="https://www.credential.net/dfef7fa4-706f-4be1-a218-e92997eed83b"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">Aceleração Java</Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
-            <Timeline position="left">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="success" />
-                  <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.dio.me/en"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">DIO</Typography>
-                  </Link>
-                  <Typography variant="caption">2023 (115 horas)</Typography>
-                  <Link
-                    href="https://www.dio.me/certificate/0C110A01/share"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">Java + Angular</Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
-            <Timeline position="right">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="success" />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.betrybe.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">Trybe</Typography>
-                  </Link>
-                  <Typography variant="caption">2023 (1500 horas)</Typography>
-                  <Link
-                    href="https://www.credential.net/0ae6637f-e78e-4494-b43d-8390ceccedfd"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">
-                      Desenvolvimento Web
-                    </Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
+          <Box component="section" sx={{ width: '50%' }}>
+            {courses.map(
+              ({
+                id,
+                isFinished,
+                courseUrl,
+                institution,
+                name,
+                finishedDate,
+                certificateUrl,
+              }) => {
+                const position: 'left' | 'right' =
+                  id % 2 === 0 ? 'right' : 'left'
+
+                return (
+                  <TimelineComponent
+                    key={id}
+                    position={position}
+                    isFinished={isFinished}
+                    courseUrl={courseUrl}
+                    institution={institution}
+                    name={name}
+                    finishedDate={finishedDate}
+                    certificateUrl={certificateUrl}
+                  />
+                )
+              },
+            )}
           </Box>
-          <Box component="section" sx={{ width: '40%' }}>
-            <Timeline position="right">
-              <TimelineItem>
-                <TimelineSeparator>
-                  <TimelineDot color="primary" />
-                </TimelineSeparator>
-                <TimelineContent
-                  sx={{ display: 'flex', flexDirection: 'column' }}
-                >
-                  <Link
-                    href="https://www.betrybe.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">
-                      Armazém Paraíba LTDA
-                    </Typography>
-                  </Link>
-                  <Typography variant="caption">(Dezembro - 2025)</Typography>
-                  <Link
-                    href="https://www.credential.net/0ae6637f-e78e-4494-b43d-8390ceccedfd"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Typography variant="caption">
-                      Estágio em Desenvolvimento de Sistemas
-                    </Typography>
-                  </Link>
-                </TimelineContent>
-              </TimelineItem>
-            </Timeline>
-          </Box>
+          {/** <Box component="section" sx={{ width: '40%' }}>
+            {courses.map(
+              ({
+                id,
+                isFinished,
+                courseUrl,
+                institution,
+                name,
+                finishedDate,
+                certificateUrl,
+              }) => {
+                const position: 'left' | 'right' =
+                  id % 2 === 0 ? 'right' : 'left'
+
+                return (
+                  <TimelineComponent
+                    key={id}
+                    position={position}
+                    isFinished={isFinished}
+                    courseUrl={courseUrl}
+                    institution={institution}
+                    name={name}
+                    finishedDate={finishedDate}
+                    certificateUrl={certificateUrl}
+                  />
+                )
+              },
+            )}
+          </Box>**/}
         </Box>
       </Box>
     </>
