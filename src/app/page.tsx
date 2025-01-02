@@ -41,6 +41,10 @@ export default function Home() {
           opacity: '0',
           animation: `fadeIn 1s ease-in-out ${idx * 0.5}s forwards`,
           color: 'rgb(40, 40, 43)',
+          transition: 'border 0.2s ease-out',
+          '&:hover': {
+            border: '1px solid blue',
+          },
         }}
       >
         {stackIcons[value]}
@@ -62,6 +66,33 @@ export default function Home() {
     <>
       <Box sx={{ height: '7.5vh' }} />
       <HeaderComponent />
+      <Box
+        sx={{
+          position: 'fixed',
+          backgroundColor: 'black',
+          bottom: '40vh',
+          right: '160vh',
+          width: '80vh',
+          height: '80vh',
+          borderRadius: '50%',
+          filter: 'blur(0px)',
+          animation: 'circleAnimation 15s ease-in-out infinite',
+          opacity: '0.2',
+        }}
+      />
+      <Box
+        sx={{
+          position: 'fixed',
+          backgroundColor: 'black',
+          top: '65vh',
+          left: '180vh',
+          width: '50vh',
+          height: '50vh',
+          borderRadius: '50%',
+          filter: 'blur(0px)',
+          opacity: '0.2',
+        }}
+      />
       <Box
         component="main"
         sx={{
