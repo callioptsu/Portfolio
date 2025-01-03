@@ -78,74 +78,107 @@ export default function AboutMe() {
             me fará contribuir em inúmeros projetos inovadores.
           </Typography>
         </Box>
-        <Box
-          component="section"
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-start',
-            width: '100%',
-            margin: '10vh 0 10vh 0',
-          }}
-        >
-          <Box component="section" sx={{ width: '50%' }}>
-            {courses.map(
-              ({
-                id,
-                isFinished,
-                courseUrl,
-                institution,
-                name,
-                finishedDate,
-                certificateUrl,
-              }) => {
-                const position: 'left' | 'right' =
-                  id % 2 === 0 ? 'right' : 'left'
-
-                return (
-                  <TimelineComponent
-                    key={id}
-                    position={position}
-                    isFinished={isFinished}
-                    courseUrl={courseUrl}
-                    institution={institution}
-                    name={name}
-                    finishedDate={finishedDate}
-                    certificateUrl={certificateUrl}
-                  />
-                )
-              },
-            )}
+        <Box component="section">
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Typography
+              fontFamily="Poppins"
+              fontWeight="bold"
+              variant="h1"
+              margin="0 0 0 4vh"
+            >
+              TIMELINE
+            </Typography>
           </Box>
-          {/** <Box component="section" sx={{ width: '40%' }}>
-            {courses.map(
-              ({
-                id,
-                isFinished,
-                courseUrl,
-                institution,
-                name,
-                finishedDate,
-                certificateUrl,
-              }) => {
-                const position: 'left' | 'right' =
-                  id % 2 === 0 ? 'right' : 'left'
+          <Box component="section" sx={{ width: '100%' }}>
+            <Box
+              component="section"
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Box
+                component="section"
+                sx={{ display: 'flex', justifyContent: 'space-around' }}
+              >
+                <Typography fontFamily="Poppins" fontWeight="bold" variant="h4">
+                  EXPERIÊNCIA
+                </Typography>
+              </Box>
+              <Box>
+                {courses.map(
+                  ({
+                    id,
+                    isFinished,
+                    courseUrl,
+                    institution,
+                    name,
+                    finishedDate,
+                    certificateUrl,
+                  }) => {
+                    const position: 'left' | 'right' =
+                      id % 2 === 0 ? 'right' : 'left'
 
-                return (
-                  <TimelineComponent
-                    key={id}
-                    position={position}
-                    isFinished={isFinished}
-                    courseUrl={courseUrl}
-                    institution={institution}
-                    name={name}
-                    finishedDate={finishedDate}
-                    certificateUrl={certificateUrl}
-                  />
-                )
-              },
-            )}
-          </Box>**/}
+                    return (
+                      <TimelineComponent
+                        key={id}
+                        position={position}
+                        isFinished={isFinished}
+                        courseUrl={courseUrl}
+                        institution={institution}
+                        name={name}
+                        finishedDate={finishedDate}
+                        certificateUrl={certificateUrl}
+                      />
+                    )
+                  },
+                )}
+              </Box>
+              <Box
+                component="section"
+                sx={{ display: 'flex', justifyContent: 'space-around' }}
+              >
+                <Typography fontFamily="Poppins" fontWeight="bold" variant="h4">
+                  CURSOS
+                </Typography>
+              </Box>
+              <Box>
+                {courses.map(
+                  ({
+                    id,
+                    isFinished,
+                    courseUrl,
+                    institution,
+                    name,
+                    finishedDate,
+                    certificateUrl,
+                  }) => {
+                    const position: 'left' | 'right' =
+                      id % 2 === 0 ? 'right' : 'left'
+
+                    return (
+                      <TimelineComponent
+                        key={id}
+                        position={position}
+                        isFinished={isFinished}
+                        courseUrl={courseUrl}
+                        institution={institution}
+                        name={name}
+                        finishedDate={finishedDate}
+                        certificateUrl={certificateUrl}
+                      />
+                    )
+                  },
+                )}
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </>
