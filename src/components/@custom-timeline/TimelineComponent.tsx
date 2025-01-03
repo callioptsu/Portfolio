@@ -35,9 +35,20 @@ export default function TimelineComponent({
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot color={isFinished ? 'success' : 'primary'} />
-          <TimelineConnector />
+          <TimelineConnector
+            sx={{
+              backgroundColor: 'black',
+              width: '1vh',
+              borderRadius: '50px',
+            }}
+          />
         </TimelineSeparator>
-        <TimelineContent sx={{ display: 'flex', flexDirection: 'column' }}>
+        <TimelineContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <Link href={courseUrl} target="_blank" rel="noreferrer">
             <Typography variant="caption" sx={{ cursor: 'pointer' }}>
               {institution}
