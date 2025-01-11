@@ -3,8 +3,8 @@
 import Image from 'next/image'
 
 // Material UI
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
 
 // Custom
 import HeaderComponent from '@/components/@custom-header/HeaderComponent'
@@ -105,48 +105,59 @@ export default function AboutMe() {
                 flexDirection: 'column',
               }}
             >
+              {
+                //   <Box
+                //     component="section"
+                //     sx={{
+                //       display: 'flex',
+                //       justifyContent: 'space-around',
+                //       marginTop: '50px',
+                //       marginBottom: '25px',
+                //     }}
+                //   >
+                //     <Typography fontFamily="Poppins" variant="h4">
+                //       EXPERIÊNCIA
+                //     </Typography>
+                //   </Box>
+                //   <Box>
+                //     {courses.map(
+                //       ({
+                //         id,
+                //         isFinished,
+                //         courseUrl,
+                //         institution,
+                //         name,
+                //         finishedDate,
+                //         certificateUrl,
+                //       }) => {
+                //         const position: 'left' | 'right' =
+                //           id % 2 === 0 ? 'right' : 'left'
+                //         return (
+                //           <TimelineComponent
+                //             key={id}
+                //             position={position}
+                //             isFinished={isFinished}
+                //             courseUrl={courseUrl}
+                //             institution={institution}
+                //             name={name}
+                //             finishedDate={finishedDate}
+                //             certificateUrl={certificateUrl}
+                //           />
+                //         )
+                //       },
+                //     )}
+                //   </Box>
+              }
               <Box
                 component="section"
-                sx={{ display: 'flex', justifyContent: 'space-around' }}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                  marginTop: '50px',
+                  marginBottom: '25px',
+                }}
               >
-                <Typography fontFamily="Poppins" fontWeight="bold" variant="h4">
-                  EXPERIÊNCIA
-                </Typography>
-              </Box>
-              <Box>
-                {courses.map(
-                  ({
-                    id,
-                    isFinished,
-                    courseUrl,
-                    institution,
-                    name,
-                    finishedDate,
-                    certificateUrl,
-                  }) => {
-                    const position: 'left' | 'right' =
-                      id % 2 === 0 ? 'right' : 'left'
-
-                    return (
-                      <TimelineComponent
-                        key={id}
-                        position={position}
-                        isFinished={isFinished}
-                        courseUrl={courseUrl}
-                        institution={institution}
-                        name={name}
-                        finishedDate={finishedDate}
-                        certificateUrl={certificateUrl}
-                      />
-                    )
-                  },
-                )}
-              </Box>
-              <Box
-                component="section"
-                sx={{ display: 'flex', justifyContent: 'space-around' }}
-              >
-                <Typography fontFamily="Poppins" fontWeight="bold" variant="h4">
+                <Typography fontFamily="Poppins" variant="h4">
                   CURSOS
                 </Typography>
               </Box>
