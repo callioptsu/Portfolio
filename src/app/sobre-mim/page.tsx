@@ -3,10 +3,12 @@
 import Image from 'next/image'
 
 // Material UI
-import { Box, Typography } from '@mui/material'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 // Custom
-import { HeaderComponent, TimelineComponent } from '@/components'
+import HeaderComponent from '@/components/@custom-header/HeaderComponent'
+import TimelineComponent from '@/components/@custom-timeline/TimelineComponent'
 
 // Data
 import { data } from './data'

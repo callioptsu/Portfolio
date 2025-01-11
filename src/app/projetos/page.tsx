@@ -1,8 +1,9 @@
 // Material UI
-import { Box, Typography } from '@mui/material'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 // Custom
-import { HeaderComponent } from '@/components'
+import HeaderComponent from '@/components/@custom-header/HeaderComponent'
 
 export default function Projects() {
   return (

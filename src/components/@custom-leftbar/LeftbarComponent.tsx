@@ -1,7 +1,11 @@
 import React, { Dispatch } from 'react'
 
 // Material UI
-import { Divider, Drawer, Link, List, ListItem } from '@mui/material'
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import Link from '@mui/material/Link';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 
 // React Icons
 import { SiGmail } from 'react-icons/si'

@@ -1,10 +1,17 @@
 'use client'
 import { useState } from 'react'
 
-// Material Ui
-import { AppBar, Container, IconButton, Toolbar } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+// Components
 import LeftbarComponent from '../@custom-leftbar/LeftbarComponent'
+
+// MUI UI
+import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+
+// MUI Icons
+import MenuIcon from '@mui/icons-material/Menu'
 
 export default function HeaderComponent() {
   const [isOpen, setIsOpen] = useState<boolean>(false)

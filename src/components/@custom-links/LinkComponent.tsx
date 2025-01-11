@@ -1,5 +1,5 @@
 // Material Ui
-import { Link } from '@mui/material'
+import Link from '@mui/material/Link';
 
 interface LinkComponentProps {
   url: string
