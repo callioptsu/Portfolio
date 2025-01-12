@@ -49,7 +49,7 @@ export default function TimelineComponent({
         >
           <Link href={courseUrl} target="_blank" rel="noreferrer">
             <Typography
-              variant="subtitle2"
+              variant="caption"
               sx={{ cursor: 'pointer', fontFamily: 'Poppins' }}
             >
               {institution}

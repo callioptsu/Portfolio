@@ -13,6 +13,9 @@ import TimelineComponent from '@/components/@custom-timeline/TimelineComponent'
 // Data
 import { data } from './data'
 
+// Style
+import './page.css'
+
 export default function AboutMe() {
   const { courses } = data
 
@@ -20,6 +23,20 @@ export default function AboutMe() {
     <>
       <Box sx={{ height: '10vh' }} />
       <HeaderComponent />
+      <Box
+        sx={{
+          position: 'absolute',
+          backgroundColor: 'black',
+          right: '150vh',
+          width: '40vh',
+          height: '40vh',
+          borderRadius: '50%',
+          filter: 'blur(0px)',
+          animation: 'circleAnimation 25s ease-in-out infinite',
+          opacity: 0.2,
+          zIndex: -1,
+        }}
+      />
       <Box component="main" sx={{ marginBottom: '10vh' }}>
         <Box
           component="section"
