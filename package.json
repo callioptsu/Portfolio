@@ -36,5 +36,8 @@
     "eslint-config-next": "15.1.2",
     "prettier": "3.4.2",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "eslint": "^9"
   }
 }
