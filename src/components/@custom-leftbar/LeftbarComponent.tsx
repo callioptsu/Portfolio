@@ -1,11 +1,11 @@
 import React, { Dispatch } from 'react'
 
 // Material UI
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import Link from '@mui/material/Link';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import Divider from '@mui/material/Divider'
+import Drawer from '@mui/material/Drawer'
+import Link from '@mui/material/Link'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
 
 // React Icons
 import { SiGmail } from 'react-icons/si'
@@ -49,35 +49,36 @@ export default function LeftbarComponent({
         {['sobre mim', 'projetos', 'contatos'].map(
           (value: string, idx: number) => {
             return (
-              <ListItem
+              <Link
                 key={idx}
+                href={value.replace(' ', '-')}
+                fontFamily="Poppins"
                 sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  color: 'white',
+                  margin: '10px',
+                  textDecoration: 'none',
+                  cursor: 'default',
                   marginBottom: '10px',
                   marginTop: '10px',
-                  ':hover': {
-                    animation: 'hoverIn 0.2s ease-in forwards',
-                  },
-                  ':not(:hover)': {
-                    animation: 'hoverOut 0.2s forwards',
-                  },
                 }}
               >
-                <Link
-                  href={value.replace(' ', '-')}
-                  fontFamily="Poppins"
+                <ListItem
                   sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    color: 'white',
-                    margin: '10px',
-                    textDecoration: 'none',
-                    cursor: 'default',
+                    padding: '20px',
+                    ':hover': {
+                      animation: 'hoverIn 0.2s ease-in forwards',
+                    },
+                    ':not(:hover)': {
+                      animation: 'hoverOut 0.2s forwards',
+                    },
                   }}
                 >
                   {renderIcons(value)}
                   {value.slice(0, 1).toUpperCase() + value.slice(1)}
-                </Link>
-              </ListItem>
+                </ListItem>
+              </Link>
             )
           },
         )}
