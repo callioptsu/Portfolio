@@ -2,9 +2,9 @@
 import React from 'react'
 
 // Material UI
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import Typography from '@mui/material/Typography'
 
 // React Icons
 import { FaReact, FaDocker, FaJava } from 'react-icons/fa'
@@ -12,7 +12,7 @@ import { RiNextjsFill } from 'react-icons/ri'
 import { SiTypescript } from 'react-icons/si'
 
 // Components
-import HeaderComponent from '@/components/@custom-header/HeaderComponent';
+import HeaderComponent from '@/components/@custom-header/HeaderComponent'
 
 // Style
 import './page.css'
@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <>
-      <Box sx={{ height: '7.5vh' }} />
+      <Box sx={{ height: '10vh' }} />
       <HeaderComponent />
       <Box
         sx={{

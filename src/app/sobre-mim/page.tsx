@@ -18,9 +18,9 @@ export default function AboutMe() {
 
   return (
     <>
-      <Box sx={{ height: '7.5vh' }} />
+      <Box sx={{ height: '10vh' }} />
       <HeaderComponent />
-      <Box component="main">
+      <Box component="main" sx={{ marginBottom: '10vh' }}>
         <Box
           component="section"
           sx={{

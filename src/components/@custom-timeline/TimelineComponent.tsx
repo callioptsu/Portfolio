@@ -1,13 +1,13 @@
 import Link from 'next/link'
 
 // Material Ui
-import Typography from '@mui/material/Typography';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
+import Typography from '@mui/material/Typography'
+import Timeline from '@mui/lab/Timeline'
+import TimelineItem from '@mui/lab/TimelineItem'
+import TimelineSeparator from '@mui/lab/TimelineSeparator'
+import TimelineConnector from '@mui/lab/TimelineConnector'
+import TimelineContent from '@mui/lab/TimelineContent'
+import TimelineDot from '@mui/lab/TimelineDot'
 
 interface TimelineComponentProps {
   position: 'left' | 'right'
@@ -48,13 +48,21 @@ export default function TimelineComponent({
           }}
         >
           <Link href={courseUrl} target="_blank" rel="noreferrer">
-            <Typography variant="caption" sx={{ cursor: 'pointer' }}>
+            <Typography
+              variant="subtitle2"
+              sx={{ cursor: 'pointer', fontFamily: 'Poppins' }}
+            >
               {institution}
             </Typography>
           </Link>
-          <Typography variant="caption">{finishedDate}</Typography>
+          <Typography variant="caption" sx={{ fontFamily: 'Poppins' }}>
+            {finishedDate}
+          </Typography>
           <Link href={certificateUrl} target="_blank" rel="noreferrer">
-            <Typography variant="caption" sx={{ cursor: 'pointer' }}>
+            <Typography
+              variant="caption"
+              sx={{ cursor: 'pointer', fontFamily: 'Poppins' }}
+            >
               {name}
             </Typography>
           </Link>
