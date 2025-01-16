@@ -11,13 +11,13 @@ import HeaderComponent from '@/components/@custom-header/HeaderComponent'
 import TimelineComponent from '@/components/@custom-timeline/TimelineComponent'
 
 // Data
-import { data } from './data'
+import { cv } from './cv'
 
 // Style
 import './page.css'
 
 export default function AboutMe() {
-  const { courses } = data
+  const { courses } = cv
 
   return (
     <>

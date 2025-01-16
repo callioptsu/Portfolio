@@ -1,4 +1,4 @@
-export const data = {
+export const cv = {
   courses: [
     {
       id: 5,

@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  env: {
+    GITHUB_USER: process.env.GITHUB_USER,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
+  },
+}
 
-export default nextConfig;
+export default nextConfig
