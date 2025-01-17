@@ -13,10 +13,11 @@ import Typography from '@mui/material/Typography'
 // MUI UI Icons
 import GitHubIcon from '@mui/icons-material/GitHub'
 
+// Helpers
+import { dateTimeFormat } from '@/utils/helpers'
+
 // Dotenv
 import dotenv from 'dotenv'
-import { dateTimeFormat } from '@/utils/helpers'
-import Image from 'next/image'
 
 dotenv.config()
 
