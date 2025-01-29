@@ -15,6 +15,9 @@ import Typography from '@mui/material/Typography'
 import HeaderComponent from '@/components/@custom-header/HeaderComponent'
 import CardComponent from '@/components/@custom-card/CardComponent'
 
+// Interfaces
+import { IProject } from '@/interfaces'
+
 export default function Projects() {
   const { dataSet, isLoading, fetchRepositories } = useProjectsState()
 
@@ -23,7 +26,7 @@ export default function Projects() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const renderCardComponent = (repo) => {
+  const renderCardComponent = (repo: IProject) => {
     return (
       <Grid key={repo.id}>
         <CardComponent repo={repo} />
