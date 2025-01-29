@@ -3,6 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 // Nodemailer
 import nodemailer from 'nodemailer'
 
+/**
+ * @description Configuração do transporter.
+ */
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_SERVER,
   port: Number(process.env.SMTP_PORT) || 587,
@@ -73,7 +76,7 @@ export async function POST(
 }
 
 /**
- * Método GET para verificar se a api está funcional.
+ * @description Método GET para verificar se a api está funcional.
  * @returns {EmailResponseBody}
  */
 export async function GET(): Promise<NextResponse<EmailResponseBody>> {

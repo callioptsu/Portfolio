@@ -16,7 +16,7 @@ interface MethodReturn {
 }
 
 /**
- * Hook customizado responsável pela requisição de projetos e
+ * @description Hook customizado responsável pela requisição de projetos e
  * criação de estados do contexto.
  * @returns {MethodReturn}
  */

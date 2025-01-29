@@ -24,14 +24,12 @@ export default function LeftbarComponent({
   isOpen,
   setIsOpen,
 }: LeftbarComponentProps) {
-  const renderIcons = (value: string) => {
-    if (value === 'sobre mim') {
-      return <BsPersonWorkspace color="white" style={{ marginRight: '10px' }} />
-    } else if (value === 'projetos') {
-      return <FaFolderTree color="white" style={{ marginRight: '10px' }} />
-    } else if (value === 'contatos') {
-      return <SiGmail color="white" style={{ marginRight: '10px' }} />
-    }
+  const navIcons: { [key: string]: React.JSX.Element } = {
+    'sobre mim': (
+      <BsPersonWorkspace color="white" style={{ marginRight: '10px' }} />
+    ),
+    projetos: <FaFolderTree color="white" style={{ marginRight: '10px' }} />,
+    contatos: <SiGmail color="white" style={{ marginRight: '10px' }} />,
   }
 
   return (
@@ -75,7 +73,7 @@ export default function LeftbarComponent({
                     },
                   }}
                 >
-                  {renderIcons(value)}
+                  {navIcons[value]}
                   {value.slice(0, 1).toUpperCase() + value.slice(1)}
                 </ListItem>
               </Link>
