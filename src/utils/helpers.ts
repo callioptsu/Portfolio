@@ -18,7 +18,7 @@ export function dateTimeFormat(dateTime: string): string {
 
 /**
  * @description Função utilitária que ajuda na criação e utilização
- * de uma instância.
+ * de uma instância axios.
  * @param instance 'GET-REPOS' | 'GET-LANGUAGES'
  * @returns {Array}
  */

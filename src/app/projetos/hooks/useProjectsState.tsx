@@ -15,6 +15,11 @@ interface MethodReturn {
   fetchRepositories: () => Promise<void>
 }
 
+/**
+ * Hook customizado responsável pela requisição de projetos e
+ * criação de estados do contexto.
+ * @returns {MethodReturn}
+ */
 export default function useProjectsState(): MethodReturn {
   const [dataSet, setDataSet] = useState<IProject[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(true)
