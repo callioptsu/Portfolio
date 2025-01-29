@@ -9,7 +9,7 @@ import nodemailer from 'nodemailer'
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_SERVER,
   port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
+  secure: true,
   auth: {
     user: process.env.GMAIL_SERVER,
     pass: process.env.GMAIL_APP_PASSWORD,
@@ -57,7 +57,11 @@ export async function POST(
       from: `"${body.name}" <${body.email}>`,
       to: process.env.GMAIL_SERVER,
       subject: body.subject,
-      text: `\n Email do usuário: ${body.email}\n` + body.message,
+      html: `
+      <p><strong>Nome:</strong> ${body.name}</p>
+      <p><strong>Email:</strong> ${body.email}</p>
+      <p><strong>Mensagem:</strong> ${body.message}</p>
+    `,
     }
 
     await transporter.sendMail(mailOptions)
