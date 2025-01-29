@@ -17,6 +17,7 @@
     "@mui/lab": "^6.0.0-beta.21",
     "@mui/material": "^6.2.1",
     "@rocketseat/eslint-config": "^3.0.12",
+    "@types/nodemailer": "^6.4.17",
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
     "moment": "^2.30.1",

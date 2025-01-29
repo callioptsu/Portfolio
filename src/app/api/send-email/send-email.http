@@ -1,0 +1,11 @@
+GET http://localhost:3000/api/send-email/
+
+###
+POST http://localhost:3000/api/send-email/
+
+{
+  "name": "Example",
+  "email": "example@gmail.com",
+  "subject": "Subject de exemplo",
+  "message": "Email de exemplo"
+}
