@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import fs from 'fs'
+import path from 'path'
 
 // Nodemailer
 import nodemailer from 'nodemailer'
@@ -39,11 +41,31 @@ export async function POST(
   try {
     const body = (await req.json()) as EmailRequestBody
 
+    const templatePath =
+      path.join(
+        process.cwd(),
+        'src',
+        'app',
+        'api',
+        'send-email',
+        'template.html',
+      ) || null
+
+    if (!templatePath) {
+      return NextResponse.json(
+        { message: 'Arquivo de template não encontrado', status: 500 },
+        { status: 500 },
+      )
+    }
+
     if (!body || Object.keys(body).length === 0) {
-      return NextResponse.json({
-        message: 'Preencha todos os campos',
-        status: 400,
-      })
+      return NextResponse.json(
+        {
+          message: 'Preencha todos os campos',
+          status: 400,
+        },
+        { status: 400 },
+      )
     }
 
     if (Object.values(body).some((value) => !value.trim())) {
@@ -53,29 +75,37 @@ export async function POST(
       })
     }
 
+    let emailHtml = fs.readFileSync(templatePath, 'utf-8')
+    emailHtml = emailHtml
+      .replace('{{name}}', body.name)
+      .replace('{{email}}', body.email)
+      .replace('{{message}}', body.message)
+
     const mailOptions = {
       from: `"${body.name}" <${body.email}>`,
       to: process.env.GMAIL_SERVER,
       subject: body.subject,
-      html: `
-      <p><strong>Nome:</strong> ${body.name}</p>
-      <p><strong>Email:</strong> ${body.email}</p>
-      <p><strong>Mensagem:</strong> ${body.message}</p>
-    `,
+      html: emailHtml,
     }
 
     await transporter.sendMail(mailOptions)
 
-    return NextResponse.json({
-      message: 'E-mail enviado com sucesso! Obrigado pelo contato.',
-      status: 200,
-    })
+    return NextResponse.json(
+      {
+        message: 'E-mail enviado com sucesso! Obrigado pelo contato.',
+        status: 200,
+      },
+      { status: 200 },
+    )
   } catch (err) {
     console.error(err)
-    return NextResponse.json({
-      message: (err as Error).message,
-      status: 500,
-    })
+    return NextResponse.json(
+      {
+        message: (err as Error).message,
+        status: 500,
+      },
+      { status: 500 },
+    )
   }
 }
 

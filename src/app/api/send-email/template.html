@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Mensagem de Contato</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f3f4f6;
+        padding: 20px;
+        margin: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        color: #555;
+        line-height: 1.6;
+      }
+      .info {
+        background: #eef2ff;
+        padding: 10px;
+        border-radius: 6px;
+        margin: 10px 0;
+      }
+      .info strong {
+        color: #1e40af;
+      }
+      blockquote {
+        font-style: italic;
+        color: #333;
+        border-left: 4px solid #1e40af;
+        padding-left: 10px;
+        margin: 10px 0;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: #777;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #1e40af;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .btn:hover {
+        background-color: #1e3a8a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>📩 Nova mensagem de contato</h2>
+      <p>
+        Você recebeu uma nova mensagem através do formulário de contato do seu
+        portfólio.
+      </p>
+
+      <div class="info">
+        <p><strong>👤 Nome:</strong> {{name}}</p>
+        <p><strong>📧 E-mail:</strong> {{email}}</p>
+      </div>
+
+      <p><strong>📜 Mensagem:</strong></p>
+      <blockquote>{{message}}</blockquote>
+
+      <p style="text-align: center">
+        <a href="mailto:{{email}}" class="btn">Responder</a>
+      </p>
+
+      <div class="footer">
+        <p>Esta é uma mensagem automática enviada pelo seu portfólio.</p>
+      </div>
+    </div>
+  </body>
+</html>
