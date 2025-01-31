@@ -23,7 +23,7 @@ export function dateTimeFormat(dateTime: string): string {
  * @returns {Array}
  */
 export async function createAxiosInstance(
-  instance: 'GET-REPOS' | 'GET-AVATARS',
+  instance: 'GET-REPOS' | 'GET-AVATARS' | 'POST-EMAIL',
   repoName: string | null,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<AxiosResponse<any, any> | null> {
@@ -40,7 +40,6 @@ export async function createAxiosInstance(
   }
 
   if (instance.includes('GET-AVATARS') && repoName) {
-    console.log(repoName)
     const axiosReposInstante = axios.create({
       baseURL: `https://api.github.com/repos/${process.env.GITHUB_USER}/${repoName}/`,
       method: 'GET',
